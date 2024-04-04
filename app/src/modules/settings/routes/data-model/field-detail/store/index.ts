@@ -14,8 +14,8 @@ import { defineStore } from 'pinia';
 import { computed } from 'vue';
 import * as alterations from './alterations';
 
-async function merge(a: any, b: any) {
-	return mergeWith(a, b, (_, src, key, obj) => {
+async function merge(object: any, source: any) {
+	return mergeWith(object, source, (_, src, key, obj) => {
 		if (src === undefined) obj[key] = src;
 	});
 }
